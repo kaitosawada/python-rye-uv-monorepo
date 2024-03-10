@@ -1,4 +1,4 @@
-# 静的解析 uv+rye monorepo構成
+# python uv+rye monorepo構成
 
 ## ryeインストール・アップデート
 
@@ -141,6 +141,8 @@ ignore = ["F841"]
 - project側に `tool.ruff.lint` があればproject内のコードはそちらが優先される
 - 基本はrootでruffやmypyの設定をして、どうしても個別のプロジェクトで設定を変えたければそちらに書く
 - mergeはされなさそう
+
+## vscode
 
 ## lambda
 
