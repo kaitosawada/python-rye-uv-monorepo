@@ -1,24 +1,22 @@
-# python uv+rye monorepo構成
+# uv+ryeでmonorepo構成を作る・ruff+mypyで静的解析を入れる
 
-## ryeインストール・アップデート
+## ryeのインストール・アップデート
 
-すでにインストール済みでもuvをonにするために実行してください。
-uvをonにするだけなら `rye config ...` でもできます。
+すでにインストール済みでもuvを有効にするために実行してください。
+uvを有効にするだけなら `rye config --set-bool behavior.use-uv=true` でも可能です。
 
 ```console
 $ curl -sSf https://rye-up.com/get | bash
 
+# uvを選択
 ? Select the preferred package installer ›
   pip-tools (slow but stable)
 ❯ uv (quick but experimental)
 
-# uvを選んでください
-
+# managed by Ryeを選択
 ? What should running `python` or `python3` do when you are not inside a Rye managed project? ›
 ❯ Run a Python installed and managed by Rye
   Run the old default Python (provided by your OS, pyenv, etc.)
-
-# managed by Ryeを選んでください
 ```
 
 ## multi project workspace
@@ -28,7 +26,7 @@ $ curl -sSf https://rye-up.com/get | bash
 https://rye-up.com/guide/workspaces/#declaring-workspaces
 
 - ワークスペース内のプロジェクトで仮想環境が同期されます
-- 静的解析の設定も楽になります
+  - rootの `./.venv` に全部入る
 - 各プロジェクトはeditableなmoduleとしてvenvにinstallされます
 
 ### root settings
